@@ -128,7 +128,7 @@ class BinaryTree {
 public class Main{
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
-        int[] arr ={50,4,55,43,96,32,76,9,1,2,6,57,300};
+        int[] arr ={1,2,3,4,5,6};
         for (int a : arr){
             tree.insert(a, tree.Treeroot);
         }
