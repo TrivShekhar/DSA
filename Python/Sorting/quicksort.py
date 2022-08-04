@@ -1,14 +1,10 @@
 def partition(arr,left,right):
     i=left
-    j=right-1
     piv=arr[right]
-    while(i<j):
-        while i<right and arr[i]<piv:
-            i+=1
-        while j>left and arr[j]>=piv:
-            j-=1
-        if(i<j):
+    for j in range(left,right):
+        if(piv>arr[j]):
             arr[i],arr[j]=arr[j],arr[i]
+            i+=1
     arr[i],arr[right]=arr[right],arr[i]
     return i
 
