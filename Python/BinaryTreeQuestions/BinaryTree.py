@@ -1,29 +1,48 @@
 class Node:
-    def __init__(self,data):
-        self.data=data
+    def __init__(self,data=0):
+        self.val=data
         self.left=None
         self.right=None
-    def __str__(self):
-        self.data
-        return str(self.data)
-class BinaryTree:
-    def __init__(self,data):
-        self.root=Node(data)
-    def insert(self,node,data):
-        if node.data>data:
-            if node.left:
-                self.insert(node.left,data)
+class BST:
+    root=None
+    def insert(self,val):
+        if(self.root==None):
+            self.root = Node(val)
+            return
+        temp=self.root
+        while(temp!=None):
+            if(temp.val<val):
+                if(temp.right==None):
+                    temp.right=Node(val)
+                    return
+                temp = temp.right
             else:
-                node.left=Node(data)
-        if node.data<data:
-            if node.right:
-                self.insert(node.right,data)
-            else:
-                node.right=Node(data)
-    def getroot(self):
-        return self.root
+                if(temp.left==None):
+                    temp.left=Node(val)
+                    return 
+                temp=temp.left
     def inorder(self,node):
         if node:
             self.inorder(node.left)
-            print(node.data,end=" ")
+            print(node.val)
             self.inorder(node.right)
+tree=BST()
+tree.insert(10)
+
+tree.insert(5)
+
+tree.insert(15)
+
+tree.insert(2)
+
+tree.insert(4)
+
+tree.insert(12)
+
+tree.inorder(tree.root)
+
+        
+
+
+
+
